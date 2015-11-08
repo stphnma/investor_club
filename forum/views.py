@@ -12,6 +12,8 @@ def main(request):
 def about(request):
     return render(request, 'forum/about.html')
 
+def landing(request):
+    return render(request, 'forum/landing.html')
 
 
 def idea_detail(request, pk):

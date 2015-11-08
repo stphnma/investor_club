@@ -9,6 +9,10 @@ def main(request):
     idea_list = IdeaPost.objects.all()
     return render(request, 'forum/main.html', {'idea_list': idea_list})
 
+def about(request):
+    return render(request, 'forum/about.html')
+
+
 
 def idea_detail(request, pk):
     idea = get_object_or_404(IdeaPost, pk=pk)

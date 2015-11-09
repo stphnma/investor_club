@@ -2,8 +2,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.main, name = "main"),
-    url(r'^landing$', views.landing, name = "landing"),
+    url(r'^$', views.landing, name = "landing"),
+    url(r'^main$', views.main, name = "main"),
     url(r'^about$', views.about, name = "about"),
     url(r'^idea/(?P<pk>[0-9]+)/$', views.idea_detail, name='idea_detail'),
     url(r'^new_idea/', views.new_idea, name='new_idea'),

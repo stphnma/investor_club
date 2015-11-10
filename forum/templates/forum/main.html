@@ -3,7 +3,7 @@
 
   <div class="jumbotron">
       <div class="container">
-        <h1 >優秀的投資主意沒有邊界</h1>
+        <h1 style="font-family:sans-serif" class="lead">優秀的投資主意沒有邊界</h1>
         <p><a class="btn btn-primary btn-lg" href="{% url 'new_idea' %}" role="button">发布新主意 &raquo;</a></p>
       </div>
     </div>
@@ -12,15 +12,15 @@
       {% for idea in idea_list %}
       <div class="row">
         <div class="col-md-4">
-          <h2>{{idea.company}}</h2>
-          <p>{{idea.title}} </p>
-          <p><a class="btn btn-default" role="button" href="{% url 'idea_detail' pk=idea.pk %}">查看详情 &raquo;</a></p>
+          <h2 >{{idea.company}}</h2>
+          <p class="lead">{{idea.title}} </p>
+          <p class="lead"><a class="btn btn-default" role="button" href="{% url 'idea_detail' pk=idea.pk %}">查看详情 &raquo;</a></p>
         </div>
 
       </div>
       {% endfor %}
 
-      <hr>
+      
 
       <footer>
         <p>&copy; Jiranhui 2015</p>

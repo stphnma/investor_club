@@ -3,26 +3,18 @@
 
   <div class="jumbotron">
       <div class="container">
-        <h1 style="font-family: EastAsiangGothic">計然會</h1>
-        <p>
-          計然會(jiranhui.com) 创立于2015年10月，宗旨是提供一个独立而高质量的平台，让优秀投资人分享中国，香港，及其他亚洲上市公司的股票，当前最优的投资主意，及其调研结果。网站目前仍在构建阶段。
-          <br><br>
-          計然會的会员资格免费，然而，申请者只会因投资能力而被录取。入会申请将由数位在美国及中国的大型对冲基金人士评判。最终成员数量将有所限制。申请人的思考过程和研究的质量将成为录取的主要标准。
-          <br><br>
-          計然會主要欢迎基于企业基本面价值和特殊情况的分析和投资主意；我们也同样欢迎看空，固定收益，及困境重组类的投资。会员递交的主意应聚焦在中国，香港，及其他亚洲地区，并应以中文填写。当然，我们同样欢迎以英文撰写的主意。
-        </p>
-        <p><a class="btn btn-primary btn-lg" href="{% url 'new_idea' %}" role="button">New Idea &raquo;</a></p>
+        <h1 >優秀的投資主意沒有邊界</h1>
+        <p><a class="btn btn-primary btn-lg" href="{% url 'new_idea' %}" role="button">发布新主意 &raquo;</a></p>
       </div>
     </div>
 
     <div class="container">
       {% for idea in idea_list %}
-
       <div class="row">
         <div class="col-md-4">
           <h2>{{idea.company}}</h2>
           <p>{{idea.title}} </p>
-          <p><a class="btn btn-default" role="button" href="{% url 'idea_detail' pk=idea.pk %}">View details &raquo;</a></p>
+          <p><a class="btn btn-default" role="button" href="{% url 'idea_detail' pk=idea.pk %}">查看详情 &raquo;</a></p>
         </div>
 
       </div>

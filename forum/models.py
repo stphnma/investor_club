@@ -24,3 +24,7 @@ class Comment(models.Model):
     def __str__(self):
         return self.author + " : " + self.content[:10] + " ..."
 
+class UserEmails(models.Model):
+    First_Name = models.CharField(max_length = 60)
+    Last_Name = models.CharField(max_length = 60)
+    Email_Address = models.CharField(max_length = 60)

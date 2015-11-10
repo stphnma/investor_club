@@ -33,7 +33,6 @@ def new_idea(request):
     return render(request, 'forum/new_idea.html', {'form':form})
 
 
-
 def comment_add(request, pk):
 
     idea = get_object_or_404(IdeaPost, pk=pk)
@@ -51,23 +50,20 @@ def comment_add(request, pk):
 
 
 
+def thankyou(request, pk):
+    user_email = get_object_or_404(UserEmails, pk=pk)
+    return render(request, 'forum/thankyou.html', {'user_email': user_email})
 
-# def new_idea(request):
-#   if request.method == 'POST':
-#       # Loading user inputs into form object
-#       form = IdeaForm(request.POST)
-#       if form.is_valid():
-#           idea = form.save(commit = False)
-#           idea.author = request.user
-#           idea.save()
-#           return redirect('forum.views.idea_detail', pk=idea.pk)
-#   else:
-#       form = IdeaForm()
-#   return render(request, "forum/new_idea.html", {'form':form})
 
-# def idea_detail(request, pk):
-#   idea = get_object_or_404(Idea, pk=pk)
-#   return render(request, "forum/idea_detail.html", {'idea':idea})
-
+def signup(request):
+    if request.method == 'POST':
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            email = form.save(commit = False)
+            email.save()
+            return redirect('forum.views.thankyou', pk = email.pk)
+    else:
+        form = EmailForm()
+    return render(request, 'forum/signup.html', {'form':form})
 
 

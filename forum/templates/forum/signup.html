@@ -1,0 +1,32 @@
+{% extends "forum/base.html" %}
+{% block content %}
+<br><br>
+<br><br><br>
+<div class="container">
+
+    <form method="POST" class="post-form">{% csrf_token %}
+
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            {{ form.Last_Name.errors }}
+            <label for="{{ form.Last_Name.id_for_label }}">姓:</label>
+            {{ form.Last_Name }}
+        </div>
+
+        <div class="fieldWrapper">
+            {{ form.First_Name.errors }}
+            <label for="{{ form.First_Name.id_for_label }}">名:</label>
+            {{ form.First_Name }}
+        </div>
+
+        <div class="fieldWrapper">
+            {{ form.Email_Address.errors }}
+            <label for="{{ form.Email_Address.id_for_label }}">邮件信箱:</label>
+            {{ form.Email_Address }}
+
+        </div>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div>
+
+{% endblock %}
